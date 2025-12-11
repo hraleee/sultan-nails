@@ -1,57 +1,3 @@
-const services = [
-  {
-    title: "Signature Gel",
-    description: "Copertura in gel ultra-sottile, equilibrio perfetto tra resistenza e luce.",
-    price: "da 60€",
-    highlight: "Durata 3+ settimane",
-  },
-  {
-    title: "Luxe Manicure Spa",
-    description: "Esfoliazione, maschera idratante, massaggio e smalto long-wear.",
-    price: "da 55€",
-    highlight: "Effetto pelle di seta",
-  },
-  {
-    title: "Pedicure Glow",
-    description: "Pedicure estetica + trattamento screpolature e finish luminoso.",
-    price: "da 65€",
-    highlight: "Relax totale",
-  },
-  {
-    title: "Nail Art Couture",
-    description: "Design su misura, micro-dettagli, foil e pigmenti specchio premium.",
-    price: "su richiesta",
-    highlight: "Solo su appuntamento",
-  },
-];
-
-const packages = [
-  {
-    name: "Reset Express",
-    info: "Shape + cuticole + smalto long-wear",
-    price: "45€",
-  },
-  {
-    name: "Spa Ritual",
-    info: "Manicure spa + massaggio + trattamento nutriente",
-    price: "70€",
-  },
-  {
-    name: "Iconic Set",
-    info: "Copertura gel + nail art personalizzata premium",
-    price: "95€",
-  },
-];
-
-const gallery = [
-  "Iridescent chrome con finish latteo",
-  "French inversa soft beige",
-  "Micro french colorata pastel",
-  "Velvet nails effetto velluto",
-  "Baby boomer set bridal",
-  "Pigmenti specchio rosé",
-];
-
 export default function MainContent() {
   return (
     <main className="relative isolate overflow-hidden text-white pt-24">
@@ -59,12 +5,13 @@ export default function MainContent() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-[#0f1018]/80 to-[#080810]" />
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-20 pt-8 sm:px-10 lg:px-14">
+        {/* Hero Section */}
         <section className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-100">
               Sultan Nails Studio
             </div>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
               Unghie couture, rituali spa e design su misura
             </h1>
             <p className="mt-3 max-w-2xl text-base text-white/80 sm:text-lg">
@@ -72,31 +19,41 @@ export default function MainContent() {
               skincare per mani e piedi. Ogni appuntamento è ritagliato sul tuo
               stile, con finiture impeccabili che durano.
             </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <a
+                className="rounded-full bg-gradient-to-r from-fuchsia-500 to-rose-500 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-fuchsia-500/40 transition hover:-translate-y-1 hover:shadow-fuchsia-500/60"
+                href="https://wa.me/3391862999"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Prenota su WhatsApp
+              </a>
+              <a
+                className="rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/20"
+                href="/servizi"
+              >
+                Scopri i servizi
+              </a>
+            </div>
           </div>
           <div className="flex flex-col gap-3 self-start rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/80 shadow-lg backdrop-blur">
             <span className="text-xs uppercase tracking-[0.18em] text-fuchsia-100">
               Contatti rapidi
             </span>
             <a
-              className="rounded-full bg-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/30 transition hover:-translate-y-0.5 hover:shadow-fuchsia-500/50"
-              href="https://wa.me/393401234567"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Prenota su WhatsApp
-            </a>
-            <a
               className="text-sm font-medium text-white hover:text-fuchsia-200"
-              href="tel:+393401234567"
+              href="tel:+393391862999"
             >
-              +39 340 123 4567
+              📞 +39 339 186 2999
             </a>
             <span className="text-xs text-white/60">
-              Via Vittoria 18, Brescia · Mar-Sab 10-19
+              Via Corso Umberto I 52, Casalnuovo di Napoli
             </span>
+            <span className="text-xs text-white/60">Mar-Sab 10-19</span>
           </div>
         </section>
 
+        {/* About Section */}
         <section className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-40px_rgba(0,0,0,0.8)] backdrop-blur lg:grid-cols-[2fr_1.1fr] lg:items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-fuchsia-500/15 px-3 py-1 text-xs font-medium text-fuchsia-100">
@@ -149,109 +106,159 @@ export default function MainContent() {
           </div>
         </section>
 
-        <section className="space-y-6" id="servizi">
-          <div className="flex flex-col gap-2">
-            <h3 className="text-2xl font-semibold sm:text-3xl">Servizi</h3>
-            <p className="max-w-2xl text-white/75">
-              Combinazioni pensate per mani e piedi impeccabili, con texture
-              morbide e finish a lunga durata.
+        {/* Quick Links to Pages */}
+        <section className="space-y-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold sm:text-4xl">
+              Esplora il nostro mondo
+            </h2>
+            <p className="mt-2 text-white/70">
+              Scopri tutto ciò che abbiamo da offrirti
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {services.map((service) => (
-              <article
-                key={service.title}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Servizi",
+                desc: "Trattamenti esclusivi per mani e piedi",
+                icon: "💅",
+                link: "/servizi",
+              },
+              {
+                title: "Palette",
+                desc: "Oltre 120 tonalità selezionate",
+                icon: "🎨",
+                link: "/palette",
+              },
+              {
+                title: "Pacchetti",
+                desc: "Offerte e abbonamenti convenienti",
+                icon: "✨",
+                link: "/pacchetti",
+              },
+              {
+                title: "Contatti",
+                desc: "Prenota il tuo appuntamento",
+                icon: "📞",
+                link: "/contatti",
+              },
+            ].map((item) => (
+              <a
+                key={item.title}
+                href={item.link}
                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg transition hover:-translate-y-1 hover:border-fuchsia-400/40 hover:bg-white/8"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-fuchsia-500/10 opacity-0 transition group-hover:opacity-100" />
                 <div className="relative flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-xl font-semibold">{service.title}</h4>
-                    <span className="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs font-semibold text-fuchsia-100">
-                      {service.price}
-                    </span>
-                  </div>
-                  <p className="text-white/75">{service.description}</p>
-                  <span className="text-sm font-medium text-fuchsia-100">
-                    {service.highlight}
+                  <div className="text-4xl">{item.icon}</div>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="text-sm text-white/75">{item.desc}</p>
+                  <span className="text-sm font-medium text-fuchsia-200">
+                    Scopri di più →
                   </span>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </section>
 
-        <section
-          className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 lg:grid-cols-2"
-          id="palette"
-        >
-          <div className="space-y-3">
-            <h3 className="text-2xl font-semibold sm:text-3xl">
-              Texture, tonalità e finish curati con luce naturale
-            </h3>
-            <p className="text-white/75">
-              Scegli tra finish latteo, mirror chrome, velvet nails o french
-              micro. Palette cromatica aggiornata mensilmente con pigmenti
-              certificati, per garantire fedeltà di colore e cura della lamina.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["Latte", "Rosé", "Nude Couture", "Velvet", "Mirror", "Pastel"].map(
-                (chip) => (
-                  <span
-                    key={chip}
-                    className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-white/85"
-                  >
-                    {chip}
-                  </span>
-                )
-              )}
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            {gallery.map((item) => (
-              <div
-                key={item}
-                className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 via-[#1a1825] to-[#0c0b15] p-4 text-sm text-white/85"
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.15),transparent_40%)]" />
-                <span className="relative block font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-6" id="pacchetti">
+        {/* Services Preview */}
+        <section className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8">
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl font-semibold sm:text-3xl">
-              Pacchetti curati per te
+              I nostri servizi più richiesti
             </h3>
             <p className="max-w-2xl text-white/75">
-              Slot limitati ogni giorno per mantenere tempi distesi e cura
-              sartoriale.
+              Dal classico al couture, ogni servizio è pensato per unghie
+              perfette
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {packages.map((pkg) => (
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Signature Gel",
+                price: "da 60€",
+                desc: "Copertura gel ultra-sottile con durata 3+ settimane",
+              },
+              {
+                title: "Luxe Manicure Spa",
+                price: "da 55€",
+                desc: "Esfoliazione, massaggio e smalto long-wear",
+              },
+              {
+                title: "Nail Art Couture",
+                price: "su richiesta",
+                desc: "Design su misura con pigmenti specchio premium",
+              },
+            ].map((service) => (
               <div
-                key={pkg.name}
-                className="flex h-full flex-col gap-2 rounded-2xl border border-white/10 bg-white/5 p-5 shadow transition hover:-translate-y-1 hover:border-fuchsia-400/40"
+                key={service.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/8"
               >
-                <div className="flex items-center justify-between">
-                  <h4 className="text-lg font-semibold">{pkg.name}</h4>
-                  <span className="text-sm font-semibold text-fuchsia-100">
-                    {pkg.price}
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-lg font-semibold">{service.title}</h4>
+                  <span className="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs font-semibold text-fuchsia-100">
+                    {service.price}
                   </span>
                 </div>
-                <p className="text-sm text-white/75">{pkg.info}</p>
-                <button className="mt-auto w-full rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-fuchsia-500 hover:text-black">
-                  Prenota ora
-                </button>
+                <p className="text-sm text-white/75">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <a
+              href="/servizi"
+              className="rounded-full border-2 border-fuchsia-400 bg-fuchsia-400/10 px-6 py-3 font-semibold text-white transition hover:bg-fuchsia-400/20"
+            >
+              Vedi tutti i servizi
+            </a>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="space-y-6">
+          <div className="text-center">
+            <h3 className="text-2xl font-semibold sm:text-3xl">
+              Cosa dicono di noi
+            </h3>
+            <p className="mt-2 text-white/70">
+              Le recensioni delle nostre clienti
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                name: "Laura M.",
+                text: "La migliore nail artist di Brescia! Professionalità e gentilezza ai massimi livelli.",
+                rating: 5,
+              },
+              {
+                name: "Sofia R.",
+                text: "Le mie unghie durano settimane senza scheggiarsi. Prodotti top e ambiente rilassante.",
+                rating: 5,
+              },
+              {
+                name: "Chiara B.",
+                text: "Nail art spettacolare! Ha realizzato esattamente quello che volevo. Super consigliato!",
+                rating: 5,
+              },
+            ].map((review) => (
+              <div
+                key={review.name}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
+                <div className="mb-3 text-lg text-fuchsia-200">
+                  {"⭐".repeat(review.rating)}
+                </div>
+                <p className="mb-4 text-white/80">{review.text}</p>
+                <div className="font-semibold text-white">{review.name}</div>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-500/15 via-white/5 to-sky-400/20 p-6">
+        {/* Final CTA */}
+        <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-500/15 via-white/5 to-sky-400/20 p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl space-y-3">
               <h3 className="text-2xl font-semibold sm:text-3xl">
@@ -267,40 +274,17 @@ export default function MainContent() {
                   href="https://wa.me/393401234567"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/40 transition hover:-translate-y-0.5"
+                  className="rounded-full bg-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/40 transition hover:-translate-y-0.5"
                 >
                   Prenota via WhatsApp
                 </a>
                 <a
-                  href="mailto:info@sultannails.it"
-                  className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+                  href="/contatti"
+                  className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
                 >
-                  Scrivimi una mail
+                  Tutti i contatti
                 </a>
               </div>
-            </div>
-            <div
-              id="contatti"
-              className="w-full max-w-xs rounded-2xl border border-white/10 bg-white/10 p-5 text-sm text-white/80"
-            >
-              <div className="text-xs uppercase tracking-[0.18em] text-fuchsia-100">
-                Studio
-              </div>
-              <div className="mt-2 font-semibold text-white">Sultan Nails</div>
-              <div>Via Vittoria 18, Brescia</div>
-              <div className="mt-2 text-white/60">Mar - Sab · 10:00 - 19:00</div>
-              <a
-                className="mt-3 block font-semibold text-white hover:text-fuchsia-200"
-                href="tel:+393401234567"
-              >
-                +39 340 123 4567
-              </a>
-              <a
-                className="text-white/80 hover:text-fuchsia-200"
-                href="mailto:info@sultannails.it"
-              >
-                info@sultannails.it
-              </a>
             </div>
           </div>
         </section>
@@ -308,4 +292,3 @@ export default function MainContent() {
     </main>
   );
 }
-
